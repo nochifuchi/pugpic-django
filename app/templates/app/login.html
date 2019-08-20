@@ -2,29 +2,33 @@
 
 {% block content %}
 
-<!-- sec-login -->
-<section id="sec-login" class="section">
-  <div class="form-inner">
-    <form class="form-login form-layout" method="POST">{% csrf_token %}
-      <h2>ログイン</h2>
-      {% if form.errors %}
-        <p class="form-error">ユーザー名かパスワードが間違っています。<br>もう一度入力してください。</p>
-      {% endif %}
-      <ul class="form-lists">
-        <li>
-          <div class="title">ユーザ名</div>
-          <input class="input-style" type="text" name="username">
-        </li>
-        <li>
-          <div class="title">パスワード</div>
-          <input class="input-style" type="password" name="password">
-        </li>
-      </ul>
-      <input class="btn" type="submit" value="ログイン">
-    </form>
-    <div class="signup-link"><a class="line-hover" href="{% url 'app:signup' %}">新規登録はこちら</a></div>
-  </div>
-</section>
-<!-- /sec-login -->
+<div class="container">
+
+  <!-- sec-login -->
+  <section id="sec-login" class="section">
+    <div class="form-inner">
+      <form class="form-login form-layout" method="POST">{% csrf_token %}
+        <h2>ログイン</h2>
+        {% if form.errors %}
+          <p class="form-error">ユーザー名かパスワードが間違っています。<br>もう一度入力してください。</p>
+        {% endif %}
+        <ul class="form-lists">
+          <li>
+            <div class="title">ユーザ名</div>
+            <input class="input-style" type="text" name="username">
+          </li>
+          <li>
+            <div class="title">パスワード</div>
+            <input class="input-style" type="password" name="password">
+          </li>
+        </ul>
+        <input class="btn" type="submit" value="ログイン">
+      </form>
+      <div class="signup-link"><a class="line-hover" href="{% url 'app:signup' %}">新規登録はこちら</a></div>
+    </div>
+  </section>
+  <!-- /sec-login -->
+
+</div>
 
 {% endblock %}
