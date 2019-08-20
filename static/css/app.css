@@ -1,0 +1,639 @@
+@charset "UTF-8";
+/*
+Copyright (c) 2009, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 3.0.0
+build: 1549
+*/
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+html {
+  color: #000;
+  background: #FFF;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,
+pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+li {
+  list-style: none;
+}
+
+caption, th {
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q:before, q:after {
+  content: '';
+}
+
+abbr, acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+input, textarea, select {
+  *font-size: 100%;
+}
+
+input, textarea, select, button {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+}
+
+legend {
+  color: #000;
+}
+
+/*----------------------------
+  utility-class
+-----------------------------*/
+.t-left {
+  text-align: left;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.t-right {
+  text-align: right;
+}
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+
+.noto-bold {
+  font-family: 'Noto Sans Japanese';
+  font-weight: 700;
+}
+
+img {
+  vertical-align: top;
+}
+
+.img-responsive {
+  width: 100%;
+}
+
+.max-responsive {
+  max-width: 100%;
+}
+
+a.hover:hover:hover {
+  text-decoration: none;
+}
+
+a.hover:hover:hover img {
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+
+a.border {
+  text-decoration: underline;
+}
+
+a.border:hover {
+  text-decoration: none;
+}
+
+a.underline {
+  text-decoration: none;
+}
+
+a.underline:hover {
+  text-decoration: underline;
+}
+
+.red {
+  color: #e7001c;
+}
+
+.red:hover {
+  text-decoration: underline;
+  color: #e7001c;
+}
+
+.arrow-red {
+  padding-left: 10px;
+  background: url("/common/img/common/arrow_red.png") no-repeat left center;
+}
+
+.link-arrow {
+  color: #000;
+  padding-right: 8px;
+  background-image: url("/common/img/common/arrow_black.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.link-arrow:hover {
+  text-decoration: underline;
+}
+
+.line {
+  border-top: solid 1px #e1e1e1;
+}
+
+/*----------------------------
+  form
+-----------------------------*/
+.form-error {
+  color: #e7001c;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.errorlist {
+  margin-top: 10px;
+  color: #e7001c;
+  font-weight: bold;
+}
+
+.errorlist li + li {
+  margin-top: 5px;
+}
+
+.form-title {
+  font-size: 16px;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+
+.form-title span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 23px;
+  background: #007ebe;
+  margin-right: 5px;
+}
+
+input, textarea, select {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #666;
+  resize: none;
+}
+
+/* form-layout */
+.form-inner {
+  width: 400px;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.form-layout h2 {
+  font-size: 23px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-layout .title {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.form-layout .form-lists {
+  margin-bottom: 35px;
+}
+
+.form-layout .form-lists > li + li {
+  margin-top: 20px;
+}
+
+.form-layout input[type='text'],
+.form-layout input[type='password'] {
+  width: 100%;
+  font-size: 15px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #72cfff;
+}
+
+.form-layout input[type='text']:hover, .form-layout input[type='text']:focus,
+.form-layout input[type='password']:hover,
+.form-layout input[type='password']:focus {
+  border: 1px solid #007ebe;
+}
+
+.form-layout input[type='submit'] {
+  font-size: 15px;
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.signup-link,
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/*----------------------------
+  utility-parts
+-----------------------------*/
+.img-circle {
+  border-radius: 50%;
+  border: 1px solid #bfbfbf;
+}
+
+.icon-layout {
+  font-weight: bold;
+}
+
+.icon-layout a {
+  display: flex;
+  align-items: center;
+}
+
+.icon-layout .icon {
+  margin-right: 7px;
+}
+
+.icon-layout .icon img {
+  width: 25px;
+}
+
+.line-hover {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.line-hover::after {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: #666;
+  opacity: 0;
+  visibility: hidden;
+  transition: all  0.2s;
+}
+
+.line-hover:hover::after {
+  bottom: -4px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* btn */
+.btn {
+  background: #007ebe;
+  display: inline-block;
+  font-size: 12px;
+  color: #fff;
+  padding: 7px 15px;
+  box-shadow: 0 3px 0 #005c8b;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  color: #fff;
+  background: #008fd8;
+  box-shadow: 0 3px 0 #004b72;
+}
+
+.btn:focus {
+  color: #fff;
+}
+
+html, body {
+  width: 100%;
+  font-size: 13px;
+  /* base size */
+  line-height: 1.4;
+  font-family: "Noto Sans Japanese", "ヒラギノ角ゴ Pro W6", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", MS PGothic, sans-serif;
+  /* base font-family */
+  color: #666;
+  /* base color */
+  font-weight: normal;
+  line-break: strict;
+  word-break: break-strict;
+  -webkit-text-size-adjust: 100%;
+  background: #fff;
+}
+
+#app {
+  min-height: 100vh;
+  position: relative;
+  padding: 66px 0 80px;
+  box-sizing: border-box;
+  background: #fafafa;
+}
+
+a {
+  color: #666;
+  transition: all  0.2s ease;
+  text-decoration: none;
+}
+
+a:focus {
+  text-decoration: none;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+#main {
+  margin: 50px 0;
+}
+
+/*----------------------------
+  header
+-----------------------------*/
+h1 {
+  font-size: 30px;
+  font-family: jaf-domus, sans-serif;
+}
+
+h1 a:before {
+  font-size: 28px;
+  font-family: "Font Awesome 5 Free";
+  content: '\f1b0';
+  font-weight: 900;
+  color: #fff;
+  margin-right: 8px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+header a {
+  color: #fff;
+}
+
+header .header-heading {
+  background: #b3b3b3;
+  color: #fff;
+  padding: 5px 0;
+}
+
+header .header-main {
+  background: #666;
+  padding: 5px 0;
+}
+
+header .header-main .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-menu ul {
+  display: flex;
+  align-items: center;
+}
+
+.header-menu ul li + li {
+  margin-left: 15px;
+}
+
+/*----------------------------
+  footer
+-----------------------------*/
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 20px 0;
+  background: #666;
+  text-align: center;
+}
+
+small {
+  font-size: 13px;
+  color: #fff;
+}
+
+/*----------------------------
+  sec-top
+-----------------------------*/
+.photo-lists {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.photo-lists > li {
+  width: calc(98%/3);
+  margin-bottom: 10px;
+  margin-right: 1%;
+  border: 1px solid #efefef;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: 2px 2px 4px #efefef;
+}
+
+.photo-lists > li:nth-child(3n) {
+  margin-right: 0;
+}
+
+.photo-lists .photo a:hover {
+  opacity: 0.8;
+}
+
+.photo-lists .photo img {
+  height: 350px;
+  object-fit: cover;
+}
+
+.photo-lists .user,
+.photo-lists .photo-info {
+  padding: 10px;
+}
+
+.photo-lists .user {
+  border-bottom: none;
+}
+
+.photo-lists .photo-info {
+  border-top: none;
+}
+
+.photo-lists .photo-info .user-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.photo-lists .photo-info .update {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #a6a6a6;
+}
+
+/*----------------------------
+  pagination
+-----------------------------*/
+.pagination {
+  margin-top: 40px;
+}
+
+.pagination-lists {
+  text-align: center;
+}
+
+.pagination-lists li {
+  display: inline-block;
+}
+
+.pagination-lists li.prev a:before,
+.pagination-lists li.next a:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.pagination-lists li.prev a:before {
+  content: '\f060';
+}
+
+.pagination-lists li.next a:before {
+  content: '\f061';
+}
+
+.pagination-lists li.disabled a {
+  color: #666;
+  pointer-events: none;
+  cursor: auto;
+}
+
+.pagination-lists li.current-page a {
+  background: #007ebe;
+  color: #fff;
+}
+
+.pagination-lists li + li {
+  margin-left: 10px;
+}
+
+.pagination-lists li a {
+  padding: 8px 14px;
+  border: 1px solid #007ebe;
+  border-radius: 4px;
+  color: #007ebe;
+}
+
+.pagination-lists li a:hover {
+  border: 1px solid #008fd8;
+  background: #e2e2e2;
+}
+
+/*----------------------------
+
+  tablet
+
+-----------------------------*/
+@media screen and (max-width: 1000px) {
+  .container {
+    width: 98%;
+  }
+  /*----------------------------
+    sec-top
+  -----------------------------*/
+  .photo-lists li {
+    width: calc(99%/2);
+  }
+  .photo-lists li:nth-child(2n) {
+    margin-right: 0;
+  }
+  .photo-lists li:nth-child(3n) {
+    margin-right: 1%;
+  }
+  .photo-lists .photo img {
+    height: 400px;
+  }
+}
+
+/*----------------------------
+
+  sp
+
+-----------------------------*/
+@media screen and (max-width: 767px) {
+  .container {
+    width: 95%;
+  }
+  /*----------------------------
+    sec-top
+  -----------------------------*/
+  .photo-lists li {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .photo-lists li:nth-child(2n) {
+    margin-right: 0;
+  }
+  .photo-lists li:nth-child(3n) {
+    margin-right: 0;
+  }
+  .photo-lists .photo img {
+    height: 450px;
+  }
+}

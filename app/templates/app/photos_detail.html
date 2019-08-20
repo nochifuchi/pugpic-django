@@ -1,0 +1,37 @@
+{% extends 'app/base.html' %}
+
+<!-- テンプレート毎のCSSファイル読み込み -->
+{% load static %}
+{% block css %}{% static 'css/photos_detail.css' %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+  <!-- sec-photo -->
+  <section id="sec-photo" class="section">
+    <div class="inner">
+      <div class="photo"><img class="img-responsive" src="{{ photo.image.url }}" alt=""></div>
+      <div class="photo-info">
+        <div class="user icon-layout">
+          <a href="{% url 'app:users_detail' photo.user.id %}">
+            <span class="icon"><img class="img-circle" src="{% static 'img/user.svg' %}" alt=""></span>
+            <span class="user-name">{{ photo.user }}</span>
+          </a>
+        </div>
+        <div class="comment">{{ photo.comment }}</div>
+        {% if request.user == photo.user %}
+        <!-- 削除ボタン -->
+        <form method="POST" action="{% url 'app:photos_delete' photo.id %}">
+          {% csrf_token %}
+          <button class="btn" type="submit" onclick='return confirm("本当に削除しますか？");'>削除</button>
+        </form>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  <!-- /sec-photo -->
+
+</div>
+
+{% endblock %}

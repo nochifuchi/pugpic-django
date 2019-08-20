@@ -1,0 +1,12 @@
+*.pyc
+*.swp
+.history
+db.sqlite3
+__pycache__
+.DS_Store
+staticfiles
+node_modules
+package-lock.json
+package.json
+gulpfile.js
+local_settings.py

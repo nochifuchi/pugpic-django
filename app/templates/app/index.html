@@ -1,0 +1,40 @@
+{% extends 'app/base.html' %}
+
+<!-- テンプレート毎のCSSファイル読み込み -->
+{% load static %}
+{% block css %}{% static 'css/index.css' %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+  <!-- sec-photo -->
+  <section id="sec-photo">
+    <ul class="photo-lists">
+      {% for photo in page_obj %}
+        <li>
+          <div class="user icon-layout">
+            <a href="{% url 'app:users_detail' photo.user.id %}">
+              <span class="icon"><img class="img-circle" src="{% static 'img/user.svg' %}" alt=""></span>
+              <span class="user-name">{{ photo.user }}</span>
+            </a>
+          </div>
+          <div class="photo">
+            <a href="{% url 'app:photos_detail' photo.id %}"><img class="img-responsive" src="{{ photo.image.url }}" alt=""></a>
+          </div>
+          <ul class="photo-info">
+            <li class="user-name">{{ photo.user }}</li>
+            <li class="comment">{{ photo.comment | linebreaks | urlize }}</li>
+            <li class="update">{{ photo.created_at }} UP</li>
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  <!-- /sec-photo -->
+
+  {% include "app/pagination.html" %}
+
+</div>
+
+{% endblock %}

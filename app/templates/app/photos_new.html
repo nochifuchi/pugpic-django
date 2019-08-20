@@ -1,0 +1,31 @@
+{% extends 'app/base.html' %}
+
+<!-- テンプレート毎のCSSファイル読み込み -->
+{% load static %}
+{% block css %}{% static 'css/photos_new.css' %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+  <!-- sec-photos-new -->
+  <section id="sec-photos-new" class="section">
+    <form method="POST" action="{% url 'app:photos_new' %}" enctype="multipart/form-data">{% csrf_token %}
+      <ul class="form-lists">
+        <li>
+          <div class="form-title"><span></span>画像</div>
+          <div class="image"><label class="btn" for="id_image">写真を選択{{ form.image }}</label></div>
+        </li>
+        <li>
+          <div class="form-title"><span></span>コメント</div>
+          <div>{{ form.comment }}</div>
+        </li>
+      </ul>
+      <button type="submit" class="btn">保存</button>
+    </form>
+  </section>
+  <!-- /sec-photos-new -->
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+@import "app.vars";
+@import "utility";
+
+.message-success {
+  padding: 10px;
+  color: $white;
+  font-size: 18px;
+  background: $blue;
+  margin-bottom: 30px;
+}
+
+/*----------------------------
+  sec-user
+-----------------------------*/
+#sec-user {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $default-color;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+}
+.icon img {
+  width: 150px;
+}
+.user-detail {
+  margin-left: 50px;
+}
+.user-name {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+.post {
+  font-size: 15px;
+  span {
+    font-weight: bold;
+  }
+}

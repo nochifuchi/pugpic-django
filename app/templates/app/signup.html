@@ -1,0 +1,35 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<!-- sec-signup -->
+<section id="sec-signup" class="section">
+  <div class="form-inner">
+    <form class="form-signup form-layout" method="POST" action="{% url 'app:signup' %}">
+      {% csrf_token %}
+      <h2>新規登録</h2>
+      <ul class="form-lists">
+        <li>
+          <div class="title">ユーザー名</div>
+          {{ form.username }}
+          {{ form.username.errors }}
+        </li>
+        <li>
+          <div class="title">パスワード</div>
+          {{ form.password1 }}
+          {{ form.password1.errors }}
+        </li>
+        <li>
+          <div class="title">パスワード（確認）</div>
+          {{ form.password2 }}
+          {{ form.password2.errors }}
+        </li>
+      </ul>
+      <input class="btn" type="submit" value="登録する">
+    </form>
+    <div class="login-link"><a class="line-hover" href="{% url 'app:login' %}">ログインはこちら</a></div>
+  </div>
+</section>
+<!-- /sec-signup -->
+
+{% endblock %}

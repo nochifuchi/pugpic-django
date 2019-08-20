@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PugPic | パグ好きのための写真投稿サイト</title>
+<meta name="description" content="パグ好きのための写真投稿サイト">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@nochifuchi1" />
+<meta property="og:title" content="PugPic | パグ好きのための写真投稿サイト" />
+<meta property="og:url" content="https://pugpic-django.herokuapp.com" />
+<meta property="og:image" content="https://pugpic-django.herokuapp.com/static/img/pugpic_ogp.jpg" />
+<meta property="og:site_name" content="PugPic" />
+<meta property="og:description" content="パグ好きのための写真投稿サイト" />
+<link rel="shortcut icon" href="/static/img/favicon.ico" />
+<link rel="icon" href="/static/img/favicon.png" />
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
+<link rel="stylesheet" type="text/css" href="{% block css %}{% endblock %}">
+<!-- Adobe Font -->
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'dje8mib',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+<!-- /Adobe Font -->
+</head>
+<body>
+  <div id="app">
+
+    <!-- header -->
+    <header>
+      <div class="header-heading">
+        <div class="container">パグ好きのための写真投稿サイト</div>
+      </div>
+      <div class="header-main">
+        <div class="container">
+          <h1><a href="{% url 'app:index' %}">PugPic</a></h1>
+          <nav class="header-menu">
+            <ul>
+              {% if request.user.is_authenticated %}
+              <li><a class="btn" href="{% url 'app:photos_new' %}">投稿</a></li>
+              <li><a class="btn" href="{% url 'app:users_detail' request.user.id %}">マイページ</a></li>
+              <li><a class="btn" href="{% url 'app:logout' %}">ログアウト</a></li>
+              {% else %}
+              <li><a class="btn" href="{% url 'app:signup' %}">新規登録</a></li>
+              <li><a class="btn" href="{% url 'app:login' %}">ログイン</a></li>
+              {% endif %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- /header -->
+
+    <div id="contents">
+      <div id="main">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <div class="container">
+        <small>©2019&nbsp;PugPic&nbsp;All&nbsp;Rights&nbsp;Reserved.</small>
+      </div>
+    </footer>
+    <!-- /footer -->
+
+  </div>
+</body>
+</html>

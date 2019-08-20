@@ -1,0 +1,57 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+// width
+$content-width: 1000px;
+$min-width: 990px;
+$popup-width: 100%;
+$sp-content-width: 92%;
+
+// fonts
+$basic-font-family:'Noto Sans Japanese',"ヒラギノ角ゴ Pro W6","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",MS PGothic,sans-serif;
+$jaf-domus: jaf-domus, sans-serif;
+$meiryo: "メイリオ";
+
+// font-size
+$font-xxs: 10px;
+$font-xs: 11px;
+$font-s: 12px;
+$default-font-size: 13px;
+$sp-default-font-size: 12px;
+$font-m: 14px;
+$font-l: 15px;
+$font-xl: 16px;
+$font-xxl: 17px;
+
+// colors
+$default-color: #666;
+$black: #000;
+$dark-grey: #cdcdcd;
+$grey: #efefef;
+$light-grey: #fafafa;
+$brown: #4d4033;
+$light-brown: #f8f8f5;
+$pale-brown: #a2968a;
+$blue: #007ebe;
+$white: #fff;
+$gold: #d9b340;
+$silver: #6f7b83;
+$bronze: #a15326;
+$red: #e7001c;
+$label-red: #f4352d;
+$sale-color: #e7001c;
+$purple: #7a77a9;
+$yellow: #d3a311;
+$orange: #e79300;
+$pale-grey: #f1f1f1;
+$green: #69b362;
+
+// link-color
+$link-color: #666 !default;
+$link-hover-color: lighten($link-color, 15%) !default;
+
+// Gutter
+$gutter: 20px !default;
+$gutter-large: $gutter * 2 !default;
+
+// line-height
+$line-height-medium: 1.75;

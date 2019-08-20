@@ -1,0 +1,19 @@
+<div class="pagination">
+  <ul class="pagination-lists">
+    {% if page_obj.has_previous %}
+    <li class="prev"><a href="?page={{ page_obj.previous_page_number }}"></a></li>
+    {% endif %}
+
+    {% for link_page in page_obj.paginator.page_range %}
+      {% if link_page == page_obj.number %}
+      <li class="current-page disabled"><a href="#">{{ link_page }}</a></li>
+      {% else %}
+      <li class="link-page"><a href="?page={{ link_page }}">{{ link_page }}</a></li>
+      {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+    <li class="next"><a href="?page={{ page_obj.next_page_number }}"></a></li>
+    {% endif %}
+  </ul>
+</div>
