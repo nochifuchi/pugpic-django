@@ -273,6 +273,29 @@ textarea {
 }
 
 /*----------------------------
+
+  sp
+
+-----------------------------*/
+@media screen and (max-width: 767px) {
+  /* form-layout */
+  .form-inner {
+    padding: 20px 0;
+  }
+  .form-layout h2 {
+    font-size: 20px;
+  }
+  .form-layout .title {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  .btn {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+}
+
+/*----------------------------
   sec-photo
 -----------------------------*/
 #sec-photo .inner {
@@ -296,4 +319,24 @@ textarea {
 
 .photo-info > div {
   margin-bottom: 10px;
+}
+
+/*----------------------------
+
+  sp
+
+-----------------------------*/
+@media screen and (max-width: 1000px) {
+  #sec-photo .inner {
+    display: block;
+  }
+  .photo {
+    width: 100%;
+  }
+  .photo img {
+    height: 400px;
+  }
+  .photo-info {
+    width: 100%;
+  }
 }

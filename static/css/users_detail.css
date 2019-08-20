@@ -272,6 +272,29 @@ textarea {
   color: #fff;
 }
 
+/*----------------------------
+
+  sp
+
+-----------------------------*/
+@media screen and (max-width: 767px) {
+  /* form-layout */
+  .form-inner {
+    padding: 20px 0;
+  }
+  .form-layout h2 {
+    font-size: 20px;
+  }
+  .form-layout .title {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  .btn {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+}
+
 .message-success {
   padding: 10px;
   color: #fff;
@@ -313,4 +336,27 @@ textarea {
 
 .post span {
   font-weight: bold;
+}
+
+/*----------------------------
+
+  sp
+
+-----------------------------*/
+@media screen and (max-width: 767px) {
+  .message-success {
+    padding: 5px;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .icon img {
+    width: 50px;
+  }
+  .user-detail {
+    margin-left: 10px;
+  }
+  .user-name {
+    font-size: 20px;
+    margin-bottom: 0px;
+  }
 }

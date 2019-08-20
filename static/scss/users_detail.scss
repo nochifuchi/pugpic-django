@@ -37,3 +37,27 @@
     font-weight: bold;
   }
 }
+
+/*----------------------------
+
+  sp
+
+-----------------------------*/
+@media screen and (max-width: 767px) {
+  .message-success {
+    padding: 5px;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .icon img {
+    width: 50px;
+  }
+  .user-detail {
+    margin-left: 10px;
+  }
+  .user-name {
+    font-size: 20px;
+    margin-bottom: 0px;
+  }
+}

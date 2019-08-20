@@ -6,49 +6,44 @@
 
 {% block content %}
 
-  <div class="container">
+{% for message in messages %}
+  <p class="message-success">{{ message }}</p>
+{% endfor %}
 
-    {% for message in messages %}
-      <p class="message-success">{{ message }}</p>
-    {% endfor %}
-
-    <!-- sec-user -->
-    <section id="sec-user" class="section">
-      <div class="user-info">
-        <div class="icon"><img class="img-circle" src="{% static 'img/user.svg' %}" alt=""></div>
-        <div class="user-detail">
-          <div class="user-name">@{{ user.username }}</div>
-          <div class="post">
-            {% if photos.count != 0 %}
-              <p>投稿 <span>{{ photos.count }}</span> 件</p>
-            {% else %}
-              {% if user == request.user %}
-                <p>初めての投稿をしてみましょう！</p>
-              {% else %}
-                <p>@{{ user.username }}さんはまだ投稿してません。</p>
-              {% endif %}
-            {% endif %}
-          </div>
-        </div>
+<!-- sec-user -->
+<section id="sec-user" class="section">
+  <div class="user-info">
+    <div class="icon"><img class="img-circle" src="{% static 'img/user.svg' %}" alt=""></div>
+    <div class="user-detail">
+      <div class="user-name">@{{ user.username }}</div>
+      <div class="post">
+        {% if photos.count != 0 %}
+          <p>投稿 <span>{{ photos.count }}</span> 件</p>
+        {% else %}
+          {% if user == request.user %}
+            <p>初めての投稿をしてみましょう！</p>
+          {% else %}
+            <p>@{{ user.username }}さんはまだ投稿してません。</p>
+          {% endif %}
+        {% endif %}
       </div>
-    </section>
-    <!-- /sec-user -->
-
-    <!-- sec-photo -->
-    <section id="sec-photo">
-      <ul class="photo-lists">
-        {% for photo in photos %}
-          <li>
-            <div class="photo">
-              <a href="{% url 'app:photos_detail' photo.id %}"><img class="img-responsive" src="{{ photo.image.url }}" alt=""></a>
-            </div>
-          </li>
-        {% endfor %}
-      </ul>
-    </section>
-    <!-- /sec-photo -->
-
+    </div>
   </div>
+</section>
+<!-- /sec-user -->
 
+<!-- sec-photo -->
+<section id="sec-photo">
+  <ul class="photo-lists">
+    {% for photo in photos %}
+      <li>
+        <div class="photo">
+          <a href="{% url 'app:photos_detail' photo.id %}"><img class="img-responsive" src="{{ photo.image.url }}" alt=""></a>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+<!-- /sec-photo -->
 
 {% endblock %}

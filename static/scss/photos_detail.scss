@@ -22,3 +22,23 @@
 .photo-info > div {
   margin-bottom: 10px;
 }
+
+/*----------------------------
+
+  sp
+
+-----------------------------*/
+@media screen and (max-width: 1000px) {
+  #sec-photo .inner {
+    display: block;
+  }
+  .photo {
+    width: 100%;
+    img {
+      height: 400px;
+    }
+  }
+  .photo-info {
+    width: 100%;
+  }
+}
