@@ -87,6 +87,10 @@ header .header-main {
   margin-left: 15px;
 }
 
+.sp-header-menu {
+  display: none;
+}
+
 /*----------------------------
   footer
 -----------------------------*/
@@ -241,9 +245,90 @@ small {
 
 -----------------------------*/
 @media screen and (max-width: 767px) {
+  #app {
+    padding: 50px 0 60px;
+  }
   .container {
     width: 95%;
   }
+  /*----------------------------
+    header
+  -----------------------------*/
+  .header-menu {
+    display: none;
+  }
+
+  .sp-header-menu {
+    display: block;
+  }
+  .nav-trigger a,
+  .nav-trigger span {
+    display: inline-block;
+    transition: all 0.4s;
+    box-sizing: border-box;
+  }
+  .nav-trigger a {
+    position: relative;
+    width: 30px;
+    height: 25px;
+    z-index: 15;
+  }
+  .nav-trigger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $white;
+    border-radius: 4px;
+    &:nth-of-type(1) {
+      top: 0;
+    }
+    &:nth-of-type(2) {
+      top: 11px;
+    }
+    &:nth-of-type(3) {
+      bottom: 0;
+    }
+  }
+  .nav-trigger a.active span {
+    &:nth-of-type(1) {
+      -webkit-transform: translateY(11px) rotate(-45deg);
+      transform: translateY(11px) rotate(-45deg);
+    }
+    &:nth-of-type(2) {
+      opacity: 0;
+    }
+    &:nth-of-type(3) {
+      -webkit-transform: translateY(-11px) rotate(45deg);
+      transform: translateY(-11px) rotate(45deg);
+    }
+  }
+  .sp-header-menu nav {
+    width: 70%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -70%;
+    z-index: 10;
+    background: rgba(0,0,0,0.6);
+    padding-top: 60px;
+    transition: all 0.2s ease-out;
+  }
+  .sp-header-menu.active nav {
+    right: 0;
+  }
+  .sp-header-menu nav ul {
+    border-top: 1px solid $white;
+  }
+  .sp-header-menu nav li {
+    text-align: center;
+    border-bottom: 1px solid $white;
+    a {
+      display: block;
+      padding: 15px 0;
+    }
+  }
+
   /*----------------------------
     sec-top
   -----------------------------*/

@@ -241,7 +241,8 @@ textarea {
 @media screen and (max-width: 767px) {
   /* form-layout */
   .form-inner {
-    padding: 20px 0;
+    width: 96%;
+    padding: 20px 2%;
   }
   .form-layout h2 {
     font-size: 20px;

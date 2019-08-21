@@ -20,6 +20,8 @@
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
 <link rel="stylesheet" type="text/css" href="{% block css %}{% endblock %}">
+<script src="{% static 'js/lib/jquery-3.4.0.js' %}"></script>
+<script src="{% static 'js/app.js' %}"></script>
 <!-- Adobe Font -->
 <script>
   (function(d) {
@@ -56,6 +58,29 @@
               {% endif %}
             </ul>
           </nav>
+          <!-- sp -->
+          <div class="sp-header-menu">
+            <div class="nav-trigger">
+              <a href="">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a>
+            </div>
+            <nav>
+              <ul>
+                <li><a href="{% url 'app:index' %}">HOME</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url 'app:photos_new' %}">投稿</a></li>
+                <li><a href="{% url 'app:users_detail' request.user.id %}">マイページ</a></li>
+                <li><a href="{% url 'app:logout' %}">ログアウト</a></li>
+                {% else %}
+                <li><a href="{% url 'app:signup' %}">新規登録</a></li>
+                <li><a href="{% url 'app:login' %}">ログイン</a></li>
+                {% endif %}
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     </header>
