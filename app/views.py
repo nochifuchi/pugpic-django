@@ -69,13 +69,13 @@ def photos_new(request):
         return render(request, 'app/photos_new.html', {'form': form})
 
 # 写真詳細ページ
-from django.views.decorators.http import require_POST
-
 def photos_detail(request, pk):
     photo = get_object_or_404(Photo, pk=pk)
     return render(request, 'app/photos_detail.html', {'photo': photo})
 
 # 写真削除
+from django.views.decorators.http import require_POST
+
 @require_POST
 def photos_delete(request, pk):
     photo = get_object_or_404(Photo, pk=pk)
