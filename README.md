@@ -8,7 +8,7 @@
 パグ好きとパグを広めるための写真共有サイト
 
 ## サイトURL
-[https://pugpic-django.herokuapp.com/](https://pugpic-django.herokuapp.com/)
+[https://pugpic-django.herokuapp.com](https://pugpic-django.herokuapp.com)
 
 ## 機能
 - 記事一覧表示機能
