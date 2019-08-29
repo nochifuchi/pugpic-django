@@ -22,5 +22,6 @@
 
 ## 使用している技術
 - Django（フレームワーク）
+- SQLite(DB)
 - Heroku（デプロイ）
 - Cloudinary（画像アップロード）
