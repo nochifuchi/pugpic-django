@@ -21,7 +21,8 @@
 - 単体テスト機能
 
 ## 使用している技術
-- Django（フレームワーク）
+- Django(フレームワーク)
+- HTML / CSS(Sass) / JavaScript(jQuery)
 - SQLite(DB)
-- Heroku（デプロイ）
-- Cloudinary（画像アップロード）
+- Heroku(デプロイ)
+- Cloudinary(画像アップロード)
